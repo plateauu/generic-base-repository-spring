@@ -32,13 +32,14 @@ public class CustomRepoDemoApplication implements CommandLineRunner {
 		person.setEmail("some@email.address.com");
 		person.setName("Martin");
 		person.setSurname("Michalak");
+		person.setPersonId("person1ABC");
 		personInputRepository.save(person);
 
 		PersonInput person2 = new PersonInput();
 		person2.setEmail("some2@second.address.com");
-		person2.setName("Second");
+		person2.setName("Martin");
 		person2.setSurname("Michalak");
-//		personInputRepository.saveAllPersonFromCollection(Collections.singletonList(person2));
+		personInputRepository.save(person2);
 
 		List<PersonInput> list = personInputRepository.findAllByName("Martin");
 		list.forEach(in -> log.info("its: "+ in.toString()));

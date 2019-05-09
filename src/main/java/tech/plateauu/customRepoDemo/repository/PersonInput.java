@@ -9,17 +9,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class PersonInput {
 
     @Id
-    private String id;
+    private String personId;
     private String name;
     private String surname;
     private String email;
 
-    public String getId() {
-        return id;
+    public String getPersonId() {
+        return personId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPersonId(String personId) {
+        this.personId = personId;
     }
 
     public String getName() {
@@ -55,7 +55,7 @@ public class PersonInput {
         PersonInput that = (PersonInput) o;
 
         return new EqualsBuilder()
-                .append(id, that.id)
+                .append(personId, that.personId)
                 .append(name, that.name)
                 .append(surname, that.surname)
                 .append(email, that.email)
@@ -65,7 +65,7 @@ public class PersonInput {
     @Override
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
-                .append(id)
+                .append(personId)
                 .append(name)
                 .append(surname)
                 .append(email)
@@ -75,7 +75,7 @@ public class PersonInput {
     @Override
     public String toString() {
         return "PersonInput{" +
-                "id='" + id + '\'' +
+                "personId='" + personId + '\'' +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +

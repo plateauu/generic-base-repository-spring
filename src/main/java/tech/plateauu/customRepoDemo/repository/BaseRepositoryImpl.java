@@ -21,7 +21,6 @@ public class BaseRepositoryImpl<E, ID> extends SimpleMongoRepository<E, ID> impl
     public List<E> findAllByName(String name) {
         Query query = new Query();
         query.addCriteria(Criteria.where("name").is(name));
-        template.find(query, PersonInput.class);
-        return null;
+        return (List<E>) template.find(query, PersonInput.class);
     }
 }
